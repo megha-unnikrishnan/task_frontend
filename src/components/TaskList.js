@@ -265,7 +265,8 @@ const TaskList = () => {
 
   const [errors, setErrors] = useState({});
 
-  const wsUrl = "ws://localhost:8000/ws/tasks/";
+  const wsUrl = "wss://task-managemen-61cdd101e449.herokuapp.com/ws/tasks/";
+
 
   useEffect(() => {
     dispatch(fetchTasks());
