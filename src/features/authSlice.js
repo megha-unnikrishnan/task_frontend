@@ -18,7 +18,7 @@ export const registerUser = createAsyncThunk(
     console.log('Token:', token); // Check if token exists
 
     try {
-      const response = await axios.post('http://localhost:8000/api/register/', userData, {
+      const response = await axios.post('https://task-managemen-61cdd101e449.herokuapp.com/api/register/', userData, {
         headers: {
           // Remove Authorization header here for registration
           // Authorization: `Bearer ${token}`,
@@ -39,7 +39,7 @@ export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/token/', {
+      const response = await axios.post('https://task-managemen-61cdd101e449.herokuapp.com/api/token/', {
         username: userData.username,
         password: userData.password,
       });
