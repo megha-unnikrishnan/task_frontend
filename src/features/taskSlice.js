@@ -20,7 +20,7 @@ export const fetchTasks = createAsyncThunk(
     const token = getState().auth.accessToken; // Get token from auth slice
     
     try {
-      const response = await axios.get('http://localhost:8000/api/tasks/', {
+      const response = await axios.get('https://task-managemen-61cdd101e449.herokuapp.com/api/tasks/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ export const createTask = createAsyncThunk(
     const token = getState().auth.accessToken;
     console.log('Token:', token);
     try {
-      const response = await axios.post('http://localhost:8000/api/tasks/', taskData, {
+      const response = await axios.post('https://task-managemen-61cdd101e449.herokuapp.com/api/tasks/', taskData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ export const updateTask = createAsyncThunk(
   async ({ taskId, taskData }, { rejectWithValue, getState }) => {
     const token = getState().auth.accessToken;
     try {
-      const response = await axios.put(`http://localhost:8000/api/tasks/${taskId}/`, taskData, {
+      const response = await axios.put(`https://task-managemen-61cdd101e449.herokuapp.com/api/tasks/${taskId}/`, taskData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -78,7 +78,7 @@ export const deleteTask = createAsyncThunk(
   async (taskId, { rejectWithValue, getState }) => {
     const token = getState().auth.accessToken;
     try {
-      await axios.delete(`http://localhost:8000/api/tasks/${taskId}/`, {
+      await axios.delete(`https://task-managemen-61cdd101e449.herokuapp.com/api/tasks/${taskId}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -96,7 +96,7 @@ export const fetchTaskStatistics = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     const token = getState().auth.accessToken; // Get token from auth slice
     try {
-      const response = await axios.get('http://localhost:8000/task-statistics/', {
+      const response = await axios.get('https://task-managemen-61cdd101e449.herokuapp.com/task-statistics/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
